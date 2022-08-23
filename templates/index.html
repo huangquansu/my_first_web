@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Huang Quan</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!--    font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="color-section">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Huang</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#project" class="nav-link">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cover">
+        <h1>Hank's Web</h1>
+        <p>Hi. I'm a Web developer & Programmer living in Tainan, Taiwan.</p>
+        <p>Have experience in web designing & developing.</p>
+    </div>
+
+    <!--        nav-img-->
+    <div class="card-group nav-group mx-auto">
+        <div class="card border-primary col-lg-4">
+            <img src="static/css/images/programmer.svg" class="card-img-top nav-img">
+            <div class="card-body">
+                <p class="card-text">About</p>
+            </div>
+        </div>
+        <div class="card border-primary  col-lg-4">
+            <img src="static/css/images/documents.svg" class="card-img-top nav-img">
+            <div class="card-body">
+                <p class="card-text">Project</p>
+            </div>
+        </div>
+        <div class="card border-primary col-lg-4">
+            <img src="static/css/images/feedback.svg" class="card-img-top nav-img">
+            <div class="card-body">
+                <p class="card-text">Contact</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="white-section" id="about">
+
+    <div class="about-row  mx-auto">
+        <h1>About</h1>
+        <p>Hello, My name is Huang Quan Su, I'm a web developer and programmer. I'm good at python , R program and a
+            little Excel VBA. This is the first website designed by myself. If you want to know more about me, please
+            check the following more websites</p>
+    </div>
+
+</section>
+<section class="color-section" id="project">
+    <div class="project-row mx-auto">
+        <h1>Project</h1>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active container-fluid">
+<!--                    <img class="project-image" src="static/css/images/web_test1.PNG">-->
+                    <p>All the project will be post here.</p>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+
+    </div>
+
+</section>
+<section class="white-section" id="contact">
+    <div class="contact-row">
+        <h1>Contact Me</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <form name="sentMessage" id="contactForm" novalidate method="post" action="{{url_for('home')}}">
+            <div class="control-group">
+                <div class="form-group mx-auto">
+                    <input type="text" class="form-control" placeholder="Name" name="name" required
+                           data-validation-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group mx-auto">
+                    <input type="email" class="form-control" placeholder="Email" name="email" required
+                           data-validation-message="Please enter your email"
+                    <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group mx-auto form-text">
+                    <textarea rows="5" class="form-control" name="text"></textarea>
+                </div>
+                <div id="success">
+                    <button type="submit" class="btn btn-primary text-button" name="sendMessageButton">Send</button>
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+</section>
+<section class="footer-section">
+<div class="footer">
+    <p>© Copyright 2022 Huang</p>
+</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

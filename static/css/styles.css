@@ -1,0 +1,71 @@
+body {
+    text-align: center !important;
+    font-family:'Montserrat', sans-serif;
+}
+
+h1,h4,p {
+    font-family:'Montserrat', sans-serif;
+    font-weight: bold;
+}
+/*flashes*/
+.flashes{
+    color: #FF1E00
+}
+/* section */
+.color-section {
+    background-color: #A4EDFF;
+    color: #A34375
+}
+
+.white-section {
+    color: #A34375
+}
+.footer-section{
+    background-color:#5800FF
+}
+
+
+.cover {
+    padding:3%;
+}
+
+
+.nav-img {
+    width: 50%
+}
+.nav-group {
+    width:70%;
+    padding:5%
+}
+.about-row{
+
+    width:40%;
+    text-align: left ;
+    line-height: 2;
+    padding: 3%
+}
+
+.project-row {
+    padding: 5%;
+    width: 60%
+}
+.project-image {
+    width:100%;
+}
+
+.contact-row {
+    padding: 5%
+}
+.form-group{
+    width:50%
+}
+.form-control{
+    width:50%
+}
+.text-button {
+    margin: 3%
+}
+.footer{
+padding: 1%;
+color: #FFF
+}
