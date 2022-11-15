@@ -4,22 +4,22 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, EmailField
 from wtforms.validators import DataRequired
 from flask_mail import Mail, Message
-# import socket
-# socket.getaddrinfo('127.0.0.1', 8080)
+import os
 
+User = 'huangtestpy@gmail.com'
+Password = 'rparnzjrpvfrgbqi'
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME='huangtestpy@gmail.com',
-    MAIL_PASSWORD='rparnzjrpvfrgbqi'
+    MAIL_USERNAME=User,
+    MAIL_PASSWORD=Password
 )
 
 mail = Mail(app)
 Bootstrap(app)
-
 
 # wtform
 class ContactForm(FlaskForm):
