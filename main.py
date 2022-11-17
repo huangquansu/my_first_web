@@ -7,9 +7,9 @@ from flask_mail import Mail, Message
 import os
 
 User = 'huangtestpy@gmail.com'
-Password = 'rparnzjrpvfrgbqi'
+Password = os.environ.get('PASSWORD')
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=465,
